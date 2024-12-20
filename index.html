@@ -12,11 +12,12 @@
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
             height: 100vh;
+            scroll-behavior: smooth; /* Ensure smooth scrolling */
         }
 
         section {
             scroll-snap-align: start;
-            height: 100vh;
+            height: 100vh; /* Ensure sections take full viewport height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -73,7 +74,7 @@
         }
 
         .content {
-            max-width: 80%;
+            max-width: 100%;
             height: auto;
         }
 
@@ -114,6 +115,10 @@
             height: 40px;
             width: 190px; /* Adjust the height as needed */
         }
+
+        html {
+            scroll-behavior: smooth; /* Ensure smooth scrolling */
+        }
     </style>
 </head>
 <body>
@@ -129,9 +134,9 @@
     </nav>
 
     <section id="section1" class="section1">
-        <h1>Welcome to Section 1</h1>
-        <p>Discover amazing content and scroll to explore!</p>
-        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image 1" class="content">
+        <!-- <h1>Welcome to Section 1</h1>
+        <p>Discover amazing content and scroll to explore!</p> -->
+        <img src="섹터1.png" alt="Placeholder Image 1" class="content">
     </section>
 
     <section id="section2" class="section2">
