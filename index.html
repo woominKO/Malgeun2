@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Scroll Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        section {
+            scroll-snap-align: start;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #0175a0;
+            color: #fff;
+            padding: 0.5rem 1rem; /* Reduced padding */
+            font-size: 1.2rem; /* Increased font size */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            margin-left: 0.5rem; /* Adjusted margin to move closer to the logo */
+        }
+
+        .section1 {
+            background: #f4f4f4;
+        }
+
+        .section2 {
+            background: #ddd;
+        }
+
+        .section3 {
+            background: #bbb;
+        }
+
+        .content {
+            max-width: 80%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                display: none;
+                background: #333;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 200px;
+                border: 1px solid #444;
+            }
+
+            .nav-links a {
+                padding: 0.5rem;
+                border-bottom: 1px solid #444;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+        }
+
+        .logo img {
+            height: 100%;
+            width: 180px; /* Set width to 190 pixels */
+        }
+
+        .logo {
+            height: 40px;
+            width: 190px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="제목을-입력해주세요_-001 (3).png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#section1">Section 1</a>
+            <a href="#section2">Section 2</a>
+            <a href="#section3">Section 3</a>
+        </div>
+    </nav>
+
+    <section id="section1" class="section1">
+        <h1>Welcome to Section 1</h1>
+        <p>Discover amazing content and scroll to explore!</p>
+        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image 1" class="content">
+    </section>
+
+    <section id="section2" class="section2">
+        <h1>Welcome to Section 2</h1>
+        <p>Experience a seamless scrolling effect with images and text.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image 2"class="content">
+    </section>
+
+    <section id="section3" class="section3">
+        <h1>Welcome to Section 3</h1>
+        <p>Thank you for visiting! Scroll back to revisit the content.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image 3"class="content">
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
