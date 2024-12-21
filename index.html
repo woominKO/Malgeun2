@@ -15,6 +15,7 @@
             overflow-x: hidden; /* Remove horizontal scrolling */
             height: 100vh;
             scroll-behavior: smooth; /* Ensure smooth scrolling */
+            min-width: 1200px; /* Set minimum width */
         }
 
         section {
@@ -64,9 +65,6 @@
             margin-left: 0.5rem; /* Adjusted margin to move closer to the logo */
         }
 
-        .section1 {
-            /* background: #e0e0e0; */
-        }
 
         .section2 {
             background: #ffffff;
@@ -80,13 +78,36 @@
             align-items: center;
             flex-direction: column;
             background: url('섹션3.png') no-repeat center center;
-            background-size: cover;
+            /* background-size: cover; */
             height: 100vh; /* Match section 2 height */
         }
 
+        .section4 {
+            background: #ffffff; /* Set a background color */
+            height: 100vh; /* Ensure section 4 takes full viewport height */
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .section4.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 .content {
+            width: 1000px; /* Maintain original width */
+            height: 100%; /* Match the height of the image in section 2 */
+        }
+
         .content {
-            width: 90%; /* Reduce the width slightly */
-            height: 90%; /* Reduce the height slightly */
+            width: 100%; /* Reduce the width slightly */
+            height: 100%; /* Reduce the height slightly */
             object-fit: cover; /* Ensure the image covers the section */
         }
 
@@ -292,6 +313,10 @@
         </div>
     </section>
 
+    <section id="section4" class="section4">
+        <img src="4ed8c0af5b9b3.png" alt="Placeholder Image 4" class="content">
+    </section>
+
     <script>
         const sections = document.querySelectorAll('section');
 
@@ -327,6 +352,8 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('show');
         });
+
+      
     </script>
     <script src="script.js"></script>
 </body>
