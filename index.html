@@ -20,7 +20,8 @@
 
         section {
             scroll-snap-align: start;
-            height: 100vh; /* Ensure sections take full viewport height */
+            height: auto; /* Ensure sections take full viewport height */
+            max-height: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,12 +71,19 @@
             background: #ffffff;
             padding-bottom: 60px;
             height: 100vh; /* Ensure section 2 takes full viewport height */
+            scroll-snap-align: start; /* Ensure section 2 responds to scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        .section2 .content {
-            width: 100%; /* Match the width of the section */
-            height: 100%; /* Match the height of the section */
-            object-fit: cover; /* Ensure the image covers the section */
+        .section2.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section3 {
@@ -110,19 +118,22 @@
 
         .section4 .content {
             width: 100%; /* Match the width of the section */
-            height: 100%; /* Match the height of the section */
+            height: auto; /* Match the height of the section */
             object-fit: cover; /* Ensure the image covers the section */
+            max-height: 90%;
         }
 
         .content {
             width: 100%; /* Reduce the width slightly */
             height: auto; /* Maintain aspect ratio */
             object-fit: cover; /* Ensure the image covers the section */
+            max-height: 90%;
         }
 
         .section1 .content {
             width: auto; /* Maintain original width */
-            height: 90%; /* Reduce the height slightly */
+            max-height: 90%; /* Reduce the height slightly */
+            height: auto;
         }
 
         .grid {
