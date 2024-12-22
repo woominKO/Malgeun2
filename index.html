@@ -72,20 +72,27 @@
             height: 100vh; /* Ensure section 2 takes full viewport height */
         }
 
+        .section2 .content {
+            width: 100%; /* Match the width of the section */
+            height: 100%; /* Match the height of the section */
+            object-fit: cover; /* Ensure the image covers the section */
+        }
+
         .section3 {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             background: url('섹션3.png') no-repeat center center;
-            /* background-size: cover; */
             height: 100vh; /* Match section 2 height */
+            min-height: 100vh; /* Ensure section 3 does not respond to vertical length changes */
+            margin-bottom: 60px; /* Add margin to prevent overlap with section 4 */
+         
         }
 
         .section4 {
             background: #ffffff; /* Set a background color */
             height: 100vh; /* Ensure section 4 takes full viewport height */
-           
             display: flex;
             justify-content: center;
             align-items: center;
@@ -93,6 +100,7 @@
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
             transform: translateY(20px);
+            margin-top: 60px; /* Add margin to prevent overlap with section 3 */
         }
 
         .section4.visible {
@@ -101,13 +109,14 @@
         }
 
         .section4 .content {
-            width: 1000px; /* Maintain original width */
-            height: 100%; /* Match the height of the image in section 2 */
+            width: 100%; /* Match the width of the section */
+            height: 100%; /* Match the height of the section */
+            object-fit: cover; /* Ensure the image covers the section */
         }
 
         .content {
             width: 100%; /* Reduce the width slightly */
-            height: 100%; /* Reduce the height slightly */
+            height: auto; /* Maintain aspect ratio */
             object-fit: cover; /* Ensure the image covers the section */
         }
 
@@ -121,17 +130,16 @@
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
             width: 600px; /* Set a fixed width */
-            height: 100%;
+            /* height: 100%; */
             margin-top: 200px; /* Move the grid slightly down */
-            
-            
             padding-left: 40px;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
+            max-height: calc(100vh - 200px); /* Ensure the grid does not overflow section 3 */
         }
 
         .grid img {
             width: 100%;
-           
+            height: auto; /* Maintain aspect ratio */
             object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease;
