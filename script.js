@@ -3,6 +3,35 @@ window.onload = function() {
         let popup = document.getElementById('popup');
         popup.style.display = 'block';
     }
+
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                const images = entry.target.querySelectorAll('img');
+                images.forEach((img, index) => {
+                    setTimeout(() => {
+                        img.classList.add('visible');
+                    }, index * 200); // Delay each image appearance
+                });
+            } else {
+                entry.target.classList.remove('visible');
+                const images = entry.target.querySelectorAll('img');
+                images.forEach(img => {
+                    img.classList.remove('visible');
+                });
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50% 0px' // Ensure section 2 responds to scrolling only when the webpage reaches it
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 };
 
 function closePopup() {
