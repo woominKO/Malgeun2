@@ -25,12 +25,17 @@ window.onload = function() {
             }
         });
     }, {
-        threshold: 0.1,
-        // rootMargin: '0px 0px 100px 0px' 
+        threshold: 0.5,
+        
     });
 
     sections.forEach(section => {
-        observer.observe(section);
+        if (section.id === 'section4') {
+            // observer.observe(section, { rootMargin: '0px 0px -200px 0px' });
+            observer.observe(section, { threshold: 0.2 });
+        } else {
+            observer.observe(section);
+        }
     });
 };
 
