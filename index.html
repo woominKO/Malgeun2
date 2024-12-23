@@ -67,10 +67,8 @@
         }
 
         .section2 {
-            background: #ffffff;
-            padding-bottom: 60px;
-            height: 100vh; /* Ensure section 2 takes full viewport height */
-            scroll-snap-align: start; /* Ensure section 2 responds to scrolling */
+            background: #ffffff; /* Set a background color */
+            height: 100vh; /* Ensure section 4 takes full viewport height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,6 +76,7 @@
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
             transform: translateY(20px);
+            margin-top: 60px; /* Add margin to prevent overlap with section 3 */
         }
 
         .section2.visible {
@@ -120,9 +119,9 @@
             max-height: 90%;
         }
 
-        .content {
-            width: 100%; /* Reduce the width slightly */
-            height: auto; /* Maintain aspect ratio */
+        .section2 .content {
+            height: auto; /* Match the height of the section */
+            height:auto;
             object-fit: cover; /* Ensure the image covers the section */
             max-height: 90%;
         }
