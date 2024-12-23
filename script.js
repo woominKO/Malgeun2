@@ -26,17 +26,26 @@ window.onload = function() {
         });
     }, {
         threshold: 0.5,
-        
     });
 
     sections.forEach(section => {
-        if (section.id === 'section4') {
-            // observer.observe(section, { rootMargin: '0px 0px -200px 0px' });
-            observer.observe(section, { threshold: 0.2 });
-        } else {
-            observer.observe(section);
-        }
+        observer.observe(section);
     });
+
+    const section4 = document.getElementById('section4');
+    const section3 = document.getElementById('section3');
+
+    const section4Observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section3.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.5,
+    });
+
+    section4Observer.observe(section4);
 };
 
 function closePopup() {

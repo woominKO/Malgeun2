@@ -71,6 +71,8 @@
         .section4 {
             background: #ffffff; /* Set a background color */
             width: 100%;
+            max-width: 1500px;
+           
             display: flex;
             justify-content: center;
             align-items: center;
@@ -95,32 +97,40 @@
         }
 
         .section3 {
+            background: #ffffff; /* Set a background color */
+            width: 100%;
+            max-width: 1500px;
+            
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: url('섹션3.png') no-repeat center center;
-            width: 100%; /* Maintain original width */
-            height: 606px;
+            transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0.5;
+            transform: translateY(2vh);
+            position: relative; /* Ensure the grid is positioned above the image */
         }
 
-        .content {
-            width: 100%; /* Reduce the width slightly */
-            
+        .section3 .content {
+            width: 100%; /* Match the width of the section */
             object-fit: cover; /* Ensure the image covers the section */
-          
+            position: absolute; /* Position the image absolutely */
+            top: 0;
+            left: 0;
+            z-index: 1; /* Ensure the image is behind the grid */
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
-            width: 600px; /* Set a fixed width */
-            margin-top: 200px; /* Move the grid slightly down */
+            width: 500px; /* Set a fixed width */
+            padding-bottom: 20px;
+            margin-top: 150px; /* Move the grid slightly down */
             padding-left: 40px;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
             max-height: calc(100vh - 200px); /* Ensure the grid does not overflow section 3 */
+            z-index: 2; /* Ensure the grid is above the image */
         }
 
         .grid img {
@@ -265,6 +275,7 @@
     </section>
 
     <section id="section3" class="section3">
+        <img src="섹션3.png" alt="" class="content">
         <div class="grid">
             <img src="001.png" alt="Placeholder Image 3-1">
             <img src="002.png" alt="Placeholder Image 3-2">
