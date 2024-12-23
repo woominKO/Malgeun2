@@ -68,7 +68,7 @@
 
         .section2 {
             background: #ffffff; /* Set a background color */
-            width:100%;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -76,7 +76,6 @@
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
             transform: translateY(2vh);
-          
         }
 
         .section2.visible {
@@ -97,12 +96,6 @@
             background: url('섹션3.png') no-repeat center center;
             width: 100%; /* Maintain original width */
             height: 606px;
-            
-          
-           
-
-           
-           
         }
 
         .section4 {
@@ -145,12 +138,12 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 1vh;
-            width: 50vw; /* Set a fixed width */
-            margin-top: 20vh; /* Move the grid slightly down */
-            padding-left: 4vh;
+            grid-gap: 10px;
+            width: 600px; /* Set a fixed width */
+            margin-top: 200px; /* Move the grid slightly down */
+            padding-left: 40px;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
-            max-height: calc(100vh - 20vh); /* Ensure the grid does not overflow section 3 */
+            max-height: calc(100vh - 200px); /* Ensure the grid does not overflow section 3 */
         }
 
         .grid img {
