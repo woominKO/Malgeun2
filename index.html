@@ -28,7 +28,7 @@
             flex-direction: column;
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(2vh);
         }
 
         section.visible {
@@ -68,20 +68,27 @@
 
         .section2 {
             background: #ffffff; /* Set a background color */
-            height: 100vh; /* Ensure section 4 takes full viewport height */
+            height: 100vh; /* Increase the height of section 2 */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
-            transform: translateY(20px);
-            margin-top: 60px; /* Add margin to prevent overlap with section 3 */
+            transform: translateY(2vh);
+           
+            
         }
 
         .section2.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .section2 .content {
+            width: 100%; /* Match the width of the section */
+            height: 100vh; /* Increase the height of the image */
+            object-fit: cover; /* Ensure the image covers the section */
         }
 
         .section3 {
@@ -92,7 +99,7 @@
             background: url('섹션3.png') no-repeat center center;
             height: 100vh; /* Match section 2 height */
             min-height: 100vh; /* Ensure section 3 does not respond to vertical length changes */
-            margin-bottom: 60px; /* Add margin to prevent overlap with section 4 */
+            margin-bottom: 6vh; /* Add margin to prevent overlap with section 4 */
         }
 
         .section4 {
@@ -104,8 +111,8 @@
             flex-direction: column;
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
-            transform: translateY(20px);
-            margin-top: 60px; /* Add margin to prevent overlap with section 3 */
+            transform: translateY(2vh);
+            margin-top: 6vh; /* Add margin to prevent overlap with section 3 */
         }
 
         .section4.visible {
@@ -114,16 +121,15 @@
         }
 
         .section4 .content {
-            height: 963px; /* Match the height of the section */
+            height: 96.3vh; /* Match the height of the section */
             object-fit: cover; /* Ensure the image covers the section */
             max-height: 90%;
         }
 
         .section2 .content {
-            height: auto; /* Match the height of the section */
-            height:auto;
+            height:100%;
             object-fit: cover; /* Ensure the image covers the section */
-            max-height: 90%;
+          
         }
 
         .section1 .content {
@@ -135,12 +141,12 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
-            width: 600px; /* Set a fixed width */
-            margin-top: 200px; /* Move the grid slightly down */
-            padding-left: 40px;
+            grid-gap: 1vh;
+            width: 50vw; /* Set a fixed width */
+            margin-top: 20vh; /* Move the grid slightly down */
+            padding-left: 4vh;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
-            max-height: calc(100vh - 200px); /* Ensure the grid does not overflow section 3 */
+            max-height: calc(100vh - 20vh); /* Ensure the grid does not overflow section 3 */
         }
 
         .grid img {
@@ -185,11 +191,12 @@
 
         .logo img {
             height: 100%;
-            width: 180px; /* Set width to 190 pixels */
+            width: 180px; /* Set width to 180px */
+            padding-top: 10px;
         }
 
         .logo {
-            height: 40px;
+            height: 100%;
             width: 190px; /* Adjust the height as needed */
         }
 
@@ -272,6 +279,15 @@
             object-fit: cover; /* Ensure the image covers the container */
             border-radius: 20px; /* Make the border rounded */
         }
+        @media (min-width: 768px) and (max-width: 1024px) {
+    .section1 .content,
+    .section2 .content,
+    .section4 .content,
+    .section3 .grid {
+        width: 800px; /* Ensure same width as PC */
+        height: 600px; /* Ensure same height as PC */
+    }
+}
     </style>
 </head>
 <body>
