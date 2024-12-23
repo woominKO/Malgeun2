@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맑은뇌신경과의원</title>
+    <link rel="shortcut icon" type="image/x-icon" href="로고.png" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            overflow-x: hidden; /* Remove horizontal scrolling */
+            height: 100vh;
+            scroll-behavior: smooth; /* Ensure smooth scrolling */
+            min-width: 1200px; /* Set minimum width */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #0175a0;
+            color: #fff;
+            padding: 0.5rem 1rem; /* Reduced padding */
+            font-size: 1.2rem; /* Increased font size */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-family: 'WonchuriTitle'; /* Apply custom font */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            margin-left: 0.5rem; /* Adjusted margin to move closer to the logo */
+        }
+        .nav-links a {
+                padding: 0.5rem;
+               
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+        
+
+        .logo img {
+            height: 100%;
+            width: 180px; /* Set width to 190 pixels */
+        }
+
+        .logo {
+            height: 40px;
+            width: 190px; /* Adjust the height as needed */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Ensure smooth scrolling */
+        }
+
+        @font-face {
+            font-family: 'WonchuriTitle';
+            src: url("high1\ Wonchuri\ Title\ M.ttf") format('truetype');
+        }
+
+        .fixed-banner1 {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: #fff; /* Set a background color */
+            z-index: 1000;
+            cursor: pointer;
+            border-radius: 20px;
+            right: 10px;
+            top: 300px;
+        }
+
+        .fixed-banner2 {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: #fff; /* Set a background color */
+            z-index: 1000;
+            cursor: pointer;
+            border-radius: 20px;
+            right: 10px;
+            top: 450px;
+        }
+
+        .fixed-banner1 img {
+            width: 100%; /* Match the width of the container */
+            height: 100%; /* Match the height of the container */
+            object-fit: cover; /* Ensure the image covers the container */
+            border-radius: 20px; /* Make the border rounded */
+        }
+
+        .fixed-banner2 img {
+            width: 100%; /* Match the width of the container */
+            height: 100%; /* Match the height of the container */
+            object-fit: cover; /* Ensure the image covers the container */
+            border-radius: 20px; /* Make the border rounded */
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="제목을-입력해주세요_-001 (3).png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#section1">Home</a>
+            <a href="#section2">병원소개</a>
+            <a href="#section3">진료분야</a>
+            <a href="#section3">검사항목</a>
+            <a href="#section3">공지사항</a>
+        </div>
+    </nav>
+    <div class="fixed-banner1" onclick="window.open('https://blog.naver.com/yungchai', '_blank')">
+        <img src="블로그배너.png" alt="Banner">
+    </div>
+    <div class="fixed-banner2" onclick="window.open('https://m.booking.naver.com/booking/13/bizes/1132544?theme=place&service-target=map-pc&lang=ko&area=pll', '_blank')">
+        <img src="네이버예약.png" alt="Banner">
+    </div>
+</body>
+</html>
