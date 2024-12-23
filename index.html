@@ -67,28 +67,16 @@
         }
 
         .section2 {
-<<<<<<< HEAD
             background: #ffffff; /* Set a background color */
-            height: 100vh; /* Increase the height of section 2 */
-=======
-            background: #ffffff;
-            padding-bottom: 60px;
-            height: 100vh; /* Ensure section 2 takes full viewport height */
-            scroll-snap-align: start; /* Ensure section 2 responds to scrolling */
->>>>>>> parent of 208a2b9 (adjust flexibility)
+            height: 110vh; /* Increase the height of section 2 */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
-<<<<<<< HEAD
             transform: translateY(2vh);
-           
-            
-=======
-            transform: translateY(20px);
->>>>>>> parent of 208a2b9 (adjust flexibility)
+            margin-top: 7vh;
         }
 
         .section2.visible {
@@ -98,7 +86,7 @@
 
         .section2 .content {
             width: 100%; /* Match the width of the section */
-            height: 100vh; /* Increase the height of the image */
+            height: 110vh; /* Increase the height of the image */
             object-fit: cover; /* Ensure the image covers the section */
         }
 
@@ -137,14 +125,9 @@
             max-height: 90%;
         }
 
-<<<<<<< HEAD
-        .section2 .content {
-            height:100%;
-=======
         .content {
             width: 100%; /* Reduce the width slightly */
             height: auto; /* Maintain aspect ratio */
->>>>>>> parent of 208a2b9 (adjust flexibility)
             object-fit: cover; /* Ensure the image covers the section */
           
         }
@@ -178,33 +161,7 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                display: none;
-                background: #333;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 200px;
-                border: 1px solid #444;
-            }
-
-            .nav-links a {
-                padding: 0.5rem;
-                border-bottom: 1px solid #444;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .menu-toggle {
-                cursor: pointer;
-                font-size: 1.5rem;
-                color: #fff;
-            }
-        }
+        
 
         .logo img {
             height: 100%;
@@ -296,15 +253,7 @@
             object-fit: cover; /* Ensure the image covers the container */
             border-radius: 20px; /* Make the border rounded */
         }
-        @media (min-width: 768px) and (max-width: 1024px) {
-    .section1 .content,
-    .section2 .content,
-    .section4 .content,
-    .section3 .grid {
-        width: 800px; /* Ensure same width as PC */
-        height: 600px; /* Ensure same height as PC */
-    }
-}
+       
     </style>
 </head>
 <body>
