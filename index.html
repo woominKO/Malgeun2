@@ -67,17 +67,28 @@
         }
 
         .section2 {
+<<<<<<< HEAD
             background: #ffffff; /* Set a background color */
             height: 100vh; /* Increase the height of section 2 */
+=======
+            background: #ffffff;
+            padding-bottom: 60px;
+            height: 100vh; /* Ensure section 2 takes full viewport height */
+            scroll-snap-align: start; /* Ensure section 2 responds to scrolling */
+>>>>>>> parent of 208a2b9 (adjust flexibility)
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0;
+<<<<<<< HEAD
             transform: translateY(2vh);
            
             
+=======
+            transform: translateY(20px);
+>>>>>>> parent of 208a2b9 (adjust flexibility)
         }
 
         .section2.visible {
@@ -126,8 +137,14 @@
             max-height: 90%;
         }
 
+<<<<<<< HEAD
         .section2 .content {
             height:100%;
+=======
+        .content {
+            width: 100%; /* Reduce the width slightly */
+            height: auto; /* Maintain aspect ratio */
+>>>>>>> parent of 208a2b9 (adjust flexibility)
             object-fit: cover; /* Ensure the image covers the section */
           
         }
