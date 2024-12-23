@@ -67,7 +67,8 @@
         }
 
         .section1,
-        .section2 {
+        .section2,
+        .section4 {
             background: #ffffff; /* Set a background color */
             width: 100%;
             display: flex;
@@ -80,13 +81,15 @@
         }
 
         .section1.visible,
-        .section2.visible {
+        .section2.visible,
+        .section4.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
         .section1 .content,
-        .section2 .content {
+        .section2 .content,
+        .section4 .content {
             width: 100%; /* Match the width of the section */
             object-fit: cover; /* Ensure the image covers the section */
         }
@@ -99,30 +102,6 @@
             background: url('섹션3.png') no-repeat center center;
             width: 100%; /* Maintain original width */
             height: 606px;
-        }
-
-        .section4 {
-            background: #ffffff; /* Set a background color */
-           width: 100%; /* Ensure section 4 takes full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
-            opacity: 0;
-            transform: translateY(2vh);
-            
-        }
-
-        .section4.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section4 .content {
-            width: 100%;
-            object-fit: cover; /* Ensure the image covers the section */
-            max-height: 90%;
         }
 
         .content {
