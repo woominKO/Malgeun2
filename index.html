@@ -66,6 +66,7 @@
             margin-left: 0.5rem; /* Adjusted margin to move closer to the logo */
         }
 
+        .section1,
         .section2 {
             background: #ffffff; /* Set a background color */
             width: 100%;
@@ -78,11 +79,13 @@
             transform: translateY(2vh);
         }
 
+        .section1.visible,
         .section2.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
+        .section1 .content,
         .section2 .content {
             width: 100%; /* Match the width of the section */
             object-fit: cover; /* Ensure the image covers the section */
@@ -127,12 +130,6 @@
             
             object-fit: cover; /* Ensure the image covers the section */
           
-        }
-
-        .section1 .content {
-            width: auto; /* Maintain original width */
-            max-height: 90%; /* Reduce the height slightly */
-            height: auto;
         }
 
         .grid {
