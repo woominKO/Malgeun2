@@ -40,6 +40,7 @@
             position: fixed;
             top: 0;
             width: 100%;
+            min-width: 1576px;
             background: #0175a0;
             color: #fff;
             padding: 0.5rem 1rem; /* Reduced padding */
@@ -80,6 +81,7 @@
             transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
             opacity: 0.5;
             transform: translateY(2vh);
+            min-width: 1576px;
         }
 
         .section1.visible,
@@ -100,7 +102,7 @@
             background: #ffffff; /* Set a background color */
             width: 100%;
             max-width: 1920px;
-            
+            min-width: 1576px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -126,7 +128,7 @@
             grid-gap: 10px;
             width: 500px; /* Set a fixed width */
             padding-bottom: 20px;
-            margin-top: 150px; /* Move the grid slightly down */
+            margin-top: 200px; /* Move the grid slightly down */
             padding-left: 40px;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
             max-height: calc(100vh - 200px); /* Ensure the grid does not overflow section 3 */
