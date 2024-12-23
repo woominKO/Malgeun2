@@ -66,11 +66,10 @@
             margin-left: 0.5rem; /* Adjusted margin to move closer to the logo */
         }
 
-
         .section2 {
             background: #ffffff;
             padding-bottom: 60px;
-            height: 606px; /* Ensure section 2 takes full viewport height */
+            height: 100vh; /* Ensure section 2 takes full viewport height */
             scroll-snap-align: start; /* Ensure section 2 responds to scrolling */
             display: flex;
             justify-content: center;
@@ -95,7 +94,6 @@
             height: 100vh; /* Match section 2 height */
             min-height: 100vh; /* Ensure section 3 does not respond to vertical length changes */
             margin-bottom: 60px; /* Add margin to prevent overlap with section 4 */
-         
         }
 
         .section4 {
@@ -117,7 +115,6 @@
         }
 
         .section4 .content {
-          
             height: 963px; /* Match the height of the section */
             object-fit: cover; /* Ensure the image covers the section */
             max-height: 90%;
@@ -141,7 +138,6 @@
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
             width: 600px; /* Set a fixed width */
-            /* height: 100%; */
             margin-top: 200px; /* Move the grid slightly down */
             padding-left: 40px;
             overflow: hidden; /* Ensure the grid gets cut off when the page width is reduced */
@@ -234,11 +230,13 @@
             padding: 5px 10px;
             cursor: pointer;
         }
+
         @font-face {
             font-family: 'WonchuriTitle';
             src: url("high1\ Wonchuri\ Title\ M.ttf") format('truetype');
         }
-        .fixed-banner1  {
+
+        .fixed-banner1 {
             position: fixed;
             width: 100px;
             height: 100px;
@@ -249,7 +247,8 @@
             right: 10px;
             top: 300px;
         }
-        .fixed-banner2  {
+
+        .fixed-banner2 {
             position: fixed;
             width: 100px;
             height: 100px;
@@ -260,7 +259,6 @@
             right: 10px;
             top: 450px;
         }
-        
 
         .fixed-banner1 img {
             width: 100%; /* Match the width of the container */
@@ -275,12 +273,6 @@
             object-fit: cover; /* Ensure the image covers the container */
             border-radius: 20px; /* Make the border rounded */
         }
-
-        
-
-        
-           
-        
     </style>
 </head>
 <body>
@@ -310,13 +302,11 @@
         <img src="네이버예약.png" alt="Banner">
     </div>
     <section id="section1" class="section1">
-       
         <img src="섹터1.png" alt="Placeholder Image 1" class="content">
     </section>
 
     <section id="section2" class="section2">
-       
-        <img src="섹터2.png" alt="Placeholder Image 2"class="content">
+        <img src="섹터2.png" alt="Placeholder Image 2" class="content">
     </section>
 
     <section id="section3" class="section3">
@@ -336,44 +326,6 @@
         <img src="4ed8c0af5b9b3.png" alt="Placeholder Image 4" class="content">
     </section>
 
-    <script>
-        const sections = document.querySelectorAll('section');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    const images = entry.target.querySelectorAll('img');
-                    images.forEach((img, index) => {
-                        setTimeout(() => {
-                            img.classList.add('visible');
-                        }, index * 200); // Delay each image appearance
-                    });
-                } else {
-                    entry.target.classList.remove('visible');
-                    const images = entry.target.querySelectorAll('img');
-                    images.forEach(img => {
-                        img.classList.remove('visible');
-                    });
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-
-      
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

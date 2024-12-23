@@ -25,8 +25,7 @@ window.onload = function() {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50% 0px' // Ensure section 2 responds to scrolling only when the webpage reaches it
+        threshold: 0.1
     });
 
     sections.forEach(section => {
