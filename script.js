@@ -1,4 +1,6 @@
+
 window.onload = function() {
+    console.log('똥')
     if (!localStorage.getItem('dontShowPopup')) {
         let popup = document.getElementById('popup');
         popup.style.display = 'block';

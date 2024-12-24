@@ -18,18 +18,7 @@
             min-width: 1200px; /* Set minimum width */
         }
 
-        section {
-            scroll-snap-align: start;
-            height: auto; /* Ensure sections take full viewport height */
-            max-height: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            transition: transform 1s ease, opacity 1s ease; /* Increased transition duration */
-            opacity: 0;
-            transform: translateY(2vh);
-        }
+       
 
         section.visible {
             opacity: 1;
@@ -73,7 +62,6 @@
             background: #ffffff; /* Set a background color */
             width: 100%;
             max-width: 1920px;
-           
             display: flex;
             justify-content: center;
             align-items: center;
