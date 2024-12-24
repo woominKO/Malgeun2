@@ -50,25 +50,22 @@ window.onload = function() {
     // Notice board functionality
     const postTableBody = document.getElementById('postTableBody');
 
-    // Fetch existing posts from the server
-    fetch('http://localhost:3000/notices')
-        .then(response => response.json())
-        .then(savedPosts => {
-            savedPosts.forEach((postData, index) => {
-                const row = document.createElement('tr');
-                row.classList.add('body');
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td class="title">${postData.title}</td>
-                    <td>작성자</td>
-                    <td>${postData.date}</td>
-                `;
-                row.addEventListener('click', () => {
-                    alert(`제목: ${postData.title}\n내용: ${postData.content}`);
-                });
-                postTableBody.appendChild(row);
-            });
+    // Load existing posts from localStorage
+    const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    savedPosts.forEach((postData, index) => {
+        const row = document.createElement('tr');
+        row.classList.add('body');
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td class="title">${postData.title}</td>
+            <td>작성자</td>
+            <td>${postData.date}</td>
+        `;
+        row.addEventListener('click', () => {
+            alert(`제목: ${postData.title}\n내용: ${postData.content}`);
         });
+        postTableBody.appendChild(row);
+    });
 
     // Restrict posting to the owner
     const owner = 'owner@example.com'; // Replace with the owner's email
