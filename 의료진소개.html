@@ -75,7 +75,7 @@
         html {
             scroll-behavior: smooth; /* Ensure smooth scrolling */
         }
-        .section1{
+        .section1, .section3{
             background: #ffffff; /* Set a background color */
             width: 100%;
             /* height: 100%; */
@@ -103,15 +103,14 @@
             transform: translateY(2vh);
             min-width: 1576px;
             position: relative;
-           
         }
         .section1.visible,
-        .section2.visible {
+        .section2.visible, .section3.visible {
             opacity: 1;
             transform: translateY(0);
         
         }
-        .section1 .content{
+        .section1 .content,.section3 .content {
             width: 100%; /* Match the width of the section */
             object-fit: cover; /* Ensure the image covers the section */
 
@@ -121,15 +120,19 @@
         .section2 .content {
             width: 100%; /* Match the width of the section */
             object-fit: cover; /* Ensure the image covers the section */
+            position: relative;
             
             
            
         }
         .section2 .iframe {
-            width: 100%; /* Match the width of the section */
-            object-fit: cover; /* Ensure the image covers the section */
-            
+            width: 60%; /* Adjust width as needed */
+            height: 60%; /* Adjust height as needed */
             position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the iframe */
+            border: none; /* Remove border */
         }
 
         @font-face {
@@ -239,7 +242,10 @@
     </section>
     <section id="section2" class="section2">
         <img src="영상틀.png" class="content">
-        <iframe  src="https://www.youtube.com/embed/bq-ZAXlO8NU?si=OiGYrNi3_sAAOZ3x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe class="iframe" src="https://www.youtube.com/embed/bq-ZAXlO8NU?si=OiGYrNi3_sAAOZ3x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <section id="section3" class="section3">
+        <img src="의료진소개.png" alt="Placeholder Image 2" class="content">
     </section>
 <script src="script.js"></script>
 </body>
