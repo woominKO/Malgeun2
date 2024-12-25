@@ -47,36 +47,12 @@ window.onload = function() {
 
     section4Observer.observe(section4);
 
-    // Notice board functionality
-    const postTableBody = document.getElementById('postTableBody');
 
-    // Load existing posts from localStorage
-    const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
-    savedPosts.forEach((postData, index) => {
-        const row = document.createElement('tr');
-        row.classList.add('body');
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td class="title">${postData.title}</td>
-            <td>작성자</td>
-            <td>${postData.date}</td>
-        `;
-        row.addEventListener('click', () => {
-            alert(`제목: ${postData.title}\n내용: ${postData.content}`);
-        });
-        postTableBody.appendChild(row);
-    });
+   
+   
 
-    // Restrict posting to the owner
-    const owner = 'owner@example.com'; // Replace with the owner's email
-    const currentUser = localStorage.getItem('currentUser'); // Assume currentUser is stored in localStorage
-
-    if (currentUser !== owner) {
-        const writeButton = document.querySelector('button[onclick="location.href=\'write.html\'"]');
-        writeButton.style.display = 'none';
-    }
+    
 };
-
 function closePopup() {
     let popup = document.getElementById('popup');
     popup.style.display = 'none';
