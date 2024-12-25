@@ -10,6 +10,11 @@ app.listen(3000, function() {
     console.log('listening on 3000');
 });
 
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(__dirname, 'index.html');
+});
+
+app.post('/quotes', (req, res) => {
+   console.log('Hellooooooooooooooooo!');
 });

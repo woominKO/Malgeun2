@@ -51,7 +51,7 @@
 </style>
 </head>
 <body>
-<form id="writeForm">
+<form id="writeForm" action="/quotes" method="POST">
 <table> 
     <tr><td><h2>글쓰기</h2></td></tr>
     <tr><td class="header">Title</td></tr>
@@ -61,7 +61,7 @@
     <tr><td><input type="submit" value="등록"></td></tr>
 </table>
 </form>
-<script>
+<!-- <script>
     document.getElementById('writeForm').addEventListener('submit', async function(event) {
         event.preventDefault();
 
@@ -86,6 +86,6 @@
             alert('작성 실패!');
         }
     });
-</script>
+</script> -->
 </body>
 </html>
