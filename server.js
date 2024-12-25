@@ -38,8 +38,16 @@ async function run() {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // sendFile method를 통해 index.html파일로 연결하자
-    app.get('/', (req, res) => {
-      res.sendFile(__dirname + '/index.html');
+    app.route('/')
+    .get((req, res) => {
+      res.sendFile(path.join(__dirname, 'index.html'), (err) => {
+        if (err) {
+          res.status(500).send('Error loading index.html');
+        }
+      });
+    })
+    .post((req, res) => {
+      res.status(405).send('POST method is not allowed on this route.');
     });
 
     // 공지사항.html 경로에 대한 GET 요청 처리
