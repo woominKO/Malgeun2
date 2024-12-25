@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <title>notice</title>
+    <link rel="shortcut icon" type="image/x-icon" href="로고.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <img src="제목을-입력해주세요_-001 (3).png" alt="Logo">
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="의료진소개.html">병원소개</a>
+        <a href="/notice">공지사항</a>
+    </div>
+</nav>
+<h2>공지사항</h2>
+<a href="write.html" class="write-button">글 쓰기</a>
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>날짜</th>
+        </tr>
+    </thead>
+    <tbody id="postTableBody">
+        <% quotes.forEach(function(quote, index) { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= quote.title %></td>
+                <td><%= quote.detail.substring(0, 100) %>...</td>
+                <td><%= new Date(quote.date).toLocaleDateString() %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+</body>
+</html>
