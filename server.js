@@ -9,8 +9,11 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 const uri = process.env.MONGODB_URI || "mongodb+srv://woomin422:b9SdJwPrQCvPUX2c@cluster0.nwxfl.mongodb.net/";
-const client = new MongoClient(uri); 
-
+const client = new MongoClient(uri, {
+  serverApi: ServerApiVersion.v1,
+  serverSelectionTimeoutMS: 5000, // 연결 제한 5초
+  socketTimeoutMS: 45000 // 소켓 제한 45초
+});
 
 let quotesCollection;
 
@@ -21,9 +24,12 @@ async function run() {
     quotesCollection = db.collection('quotes');
     console.log("Connected to Database");
 
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, function() {
-      console.log(`listening on ${PORT}`);
+    const PORT = process.env.PORT;
+    if (!PORT) {
+      throw new Error('PORT environment variable is not defined');
+    }
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
     });
 
     app.use(express.static(path.join(__dirname, 'public')));
