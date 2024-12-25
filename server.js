@@ -27,8 +27,9 @@ async function run() {
     quotesCollection = db.collection('quotes');
     console.log("Connected to Database");
 
-    app.listen(3000, function() {
-      console.log('listening on 3000');
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, function() {
+      console.log(`listening on ${PORT}`);
     });
 
     app.use(express.static(path.join(__dirname, 'public')));
