@@ -24,13 +24,15 @@ async function run() {
     quotesCollection = db.collection('quotes');
     console.log("Connected to Database");
 
-    const PORT = process.env.PORT;
+    const PORT = process.env.PORT || 3000; // 기본 포트를 3000으로 설정
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+
     if (!PORT) {
       throw new Error('PORT environment variable is not defined');
     }
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+    
 
     app.use(express.static(path.join(__dirname, 'public')));
 
