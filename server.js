@@ -1,16 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { MongoClient, ServerApiVersion } = require('mongodb'); // ServerApiVersion 가져오기
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require('path');
 const app = express();
+
 // view engine 설정
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const uri = "mongodb+srv://woomin422:b9SdJwPrQCvPUX2c@cluster0.nwxfl.mongodb.net/";
+const uri = process.env.MONGODB_URI || "mongodb+srv://woomin422:b9SdJwPrQCvPUX2c@cluster0.nwxfl.mongodb.net/";
 const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -37,8 +36,6 @@ async function run() {
     // body-parser
     app.use(bodyParser.urlencoded({ extended: true }));
 
-    
-
     // sendFile method를 통해 index.html파일로 연결하자
     app.get('/', (req, res) => {
       res.sendFile(__dirname + '/index.html');
@@ -52,7 +49,6 @@ async function run() {
         })
         .catch(error => console.error(error));
     });
-    
 
     app.post('/quotes', (req, res) => {
       const quote = {
