@@ -67,7 +67,7 @@ async function run() {
       };
       quotesCollection.insertOne(quote)
         .then(result => {
-          res.redirect('/notice.html');
+          res.redirect('/notice');
         })
         .catch(error => console.error(error));
     });
