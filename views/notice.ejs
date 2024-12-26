@@ -26,7 +26,9 @@
         <tr>
             <th>번호</th>
             <th>제목</th>
+            <th></th>
             <th>날짜</th>
+            
         </tr>
     </thead>
     <tbody id="postTableBody">
@@ -34,11 +36,13 @@
             <tr>
                 <td><%= index + 1 %></td>
                 <td><%= quote.title %></td>
+                <button id="detailButton"></button>
                 <td><%= new Date(quote.date).toLocaleDateString() %></td>
             </tr>
         <% }); %>
     </tbody>
 </table>
 <a href="write.html" class="write-button">글 쓰기</a>
+<script src="notice.js"></script>
 </body>
 </html>
