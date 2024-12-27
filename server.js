@@ -16,12 +16,14 @@ const client = new MongoClient(uri, {
 });
 
 let quotesCollection;
+let index;
 
 async function run() {
   try {
     await client.connect();
     const db = client.db('게시글');
     quotesCollection = db.collection('quotes');
+    // index = db.collection('quotes').createIndex({ title: 1, detail: 1 }, { unique: true });
     console.log("Connected to Database");
 
     const PORT = process.env.PORT || 3000; // 기본 포트를 3000으로 설정
@@ -32,7 +34,6 @@ async function run() {
     if (!PORT) {
       throw new Error('PORT environment variable is not defined');
     }
-    
 
     app.use(express.static(path.join(__dirname, 'public')));
 
@@ -73,6 +74,36 @@ async function run() {
         })
         .catch(error => console.error(error));
     });
+
+    const { ObjectId } = require('mongodb');
+
+    app.get('/writing/:id', async (req, res) => {
+      try {
+        const id = req.params.id; // URL에서 ID 추출
+        
+        // ObjectId 유효성 검사
+        if (!ObjectId.isValid(id)) {
+          return res.status(400).send('잘못된 ID 형식입니다.');
+        }
+    
+        // MongoDB에서 데이터 조회
+        const result = await quotesCollection.findOne({ _id: new ObjectId(id) });
+    
+        if (result) {
+          // EJS에 데이터 전달 및 렌더링
+          res.render('writing.ejs', { title: result.title, detail: result.detail });
+        } else {
+          res.status(404).send('게시글을 찾을 수 없습니다.');
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('서버 오류 발생');
+      }
+    });
+    
+
+
+  
 
   } catch (e) {
     console.error(e);
