@@ -8,13 +8,15 @@
 <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-<form id="writeForm" action="/quotes" method="POST">
+<form id="writeForm" action="/quotes" method="POST" enctype="multipart/form-data">
 <table> 
     <tr><td><h2>글쓰기</h2></td></tr>
     <tr><td class="header">Title</td></tr>
     <tr><td><input type="text" placeholder="제목을 입력하세요" name="title" id="title" required></td></tr>
     <tr><td class="header">Comment</td></tr>
     <tr><td><textarea placeholder="내용을 입력하세요" name="detail" id="content" required></textarea></td></tr>
+    <label for="image">이미지 첨부:</label>
+    <input type="file" id="image" name="image">
     <tr><td><button type="submit">Save</button></td></tr>
 </table>
 </form>

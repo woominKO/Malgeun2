@@ -27,13 +27,16 @@
         <a href="/notice">공지사항</a>
     </div>
 </nav>
-<h2>공지사항</h2>
+<div class="noticeimg-container">
+<img src="공지사항.png"  class="notice-image">
+</div>
 <div class="table-container">
 <table>
     <thead>
         <tr>
             <th>No.</th>
             <th>Title</th>
+            <th>날짜</th>
         </tr>
     </thead>
     <tbody id="postTableBody">
@@ -41,7 +44,7 @@
             <tr style="height: 40px;">
                 <td><%= index + 1 %></td>
                 <td><a href="/writing/<%= quote._id %>"><%= quote.title %></a></td>
-            </tr>
+                <td><%= new Date(quote.date).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
         <% }); %>
     </tbody>
 </table>
