@@ -71,21 +71,34 @@ html {
     font-family: 'WonchuriTitle';
     src: url("high1\ Wonchuri\ Title\ M.ttf") format('truetype');
 }
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+}
 
 table {
-    width: 80%;
-    margin: auto;
+    width: 600px;
+    margin: 50px;
     border-collapse: collapse;
+    height: 40px;
 }
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
+    width: 100px;
 }
 th {
     background-color: #f2f2f2;
-    text-align: left;
+    text-align: center;
 }
-
+td {
+    text-align: center;
+}
+tbody tr {
+    height: 40px; /* Set height for each row in tbody */
+}
 .write-button {
     display: block;
     width: 100px;

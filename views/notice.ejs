@@ -6,7 +6,15 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
     <title>notice</title>
     <link rel="shortcut icon" type="image/x-icon" href="로고.png" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        th {
+            width: 100px; /* Adjust the width as needed */
+        }
+        th:nth-child(2) {
+            width: 300px; /* Adjust the width as needed */
+        }
+    </style>
 </head>
 <body>
 <nav>
@@ -20,23 +28,24 @@
     </div>
 </nav>
 <h2>공지사항</h2>
-
+<div class="table-container">
 <table>
     <thead>
         <tr>
-            <th>번호</th>
-            <th>제목</th>
+            <th>No.</th>
+            <th>Title</th>
         </tr>
     </thead>
     <tbody id="postTableBody">
         <% quotes.forEach(function(quote, index) { %>
-            <tr>
+            <tr style="height: 40px;">
                 <td><%= index + 1 %></td>
                 <td><a href="/writing/<%= quote._id %>"><%= quote.title %></a></td>
             </tr>
         <% }); %>
     </tbody>
 </table>
+</div>
 <a href="write.html" class="write-button">글 쓰기</a>
 <script src="notice.js"></script>
 </body>
