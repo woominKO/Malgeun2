@@ -20,31 +20,5 @@
     <tr><td><button type="submit">Save</button></td></tr>
 </table>
 </form>
-<!-- <script>
-    document.getElementById('writeForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
-
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
-        const date = new Date().toISOString().split('T')[0];
-
-        const postData = { title, content, date };
-
-        const response = await fetch('http://localhost:3000/notices', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(postData)
-        });
-
-        if (response.ok) {
-            alert('작성 완료!');
-            window.location.href = '공지사항.html';
-        } else {
-            alert('작성 실패!');
-        }
-    });
-</script> -->
 </body>
 </html>
